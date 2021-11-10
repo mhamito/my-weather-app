@@ -1,0 +1,24 @@
+<div class="well">
+  <h2>Enter a zipcode:</h2>
+  <div class="loader" *ngIf="loading"></div>
+  <form [formGroup]="addLocationForm"
+        (submit)="onAddLocation()">
+    <input class="form-control"
+           placeholder="Zipcode"
+           type="text"
+           id="addLocation"
+           formControlName="zipCode">
+    <p class="text-danger" *ngIf="isZipCodeInvalid(); else lineBreak">must contain only numbers (continuation of 0-9)</p>
+    <ng-template #lineBreak>
+      <br/>
+    </ng-template>
+    <button class="btn btn-primary cursor"
+            type="submit"
+            id="addLocationBtn"
+            [disabled]="!addLocationForm.valid">
+      Add location
+    </button>
+  </form>
+</div>
+
+

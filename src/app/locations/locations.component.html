@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <app-add-location (addLocation)="addNewLocation($event)"></app-add-location>
+  <div *ngFor="let location of locations; let i = index; trackBy: trackByFn">
+    <app-location-item [location]="location" (removeLocation)="removeLocation(i)"></app-location-item>
+  </div>
+</div>
+
+

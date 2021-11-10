@@ -1,0 +1,19 @@
+<div class="well flex">
+  <div>
+    <h3>{{location.locationName}} ({{location.zipCode}})</h3>
+    <h4>Current conditions: {{location.currentCondition}}</h4>
+    <h4>Temperatures today:</h4>
+    <p>
+      Current {{location.currentTemperature}}
+      - Max {{location.maxTemperature}}
+      - Min {{location.minTemperature}}
+    </p>
+    <p>
+      <a [routerLink]="['/forecast', location.zipCode]">Show 5-day forecast for Rancho Cordova</a>
+    </p>
+  </div>
+  <div>
+    <span class="close" (click)="onRemoveLocation()">×</span>
+    <img [src]="location.icon" *ngIf="!!location.icon">
+  </div>
+</div>

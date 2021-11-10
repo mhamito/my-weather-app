@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="panel panel-default" *ngIf="forecastWeather.conditions.length > 0">
+    <div class="panel-heading">
+      <h3 class="panel-title">5-day forecast for {{forecastWeather.locationName}} ({{forecastWeather.zipCode}})</h3>
+    </div>
+    <ul class="list-group" *ngFor="let condition of forecastWeather.conditions">
+      <li class="list-group-item">
+        {{condition.weatherDate}}:
+        {{condition.weatherConditions}}
+        - Min: {{condition.minTemperature}}
+        - Max: {{condition.maxTemperature}}
+
+        <img class="icon" [src]="condition.icon" *ngIf="!!condition.icon">
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-success" tabindex="0" id="mainPageBtn" (click)="onBackToMainPage()">&lt; Back to main page</button>
+</div>

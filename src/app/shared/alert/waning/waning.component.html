@@ -1,0 +1,14 @@
+<div class="row" *ngIf="!!message">
+  <div class="col-xs-12">
+    <div class="alert alert-warning">
+      {{message}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true" (click)="onCloseWarning()">x</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
